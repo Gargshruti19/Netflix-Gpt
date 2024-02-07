@@ -1,27 +1,72 @@
 import { useRef, useState } from "react";
 import Header from "./Header";
 import { checkValidatedData } from "../Utils/validate";
+import {
+	createUserWithEmailAndPassword,
+	signInWithEmailAndPassword,
+} from "firebase/auth";
+import { auth } from "../Utils/firebase";
 
 const Login = () => {
 	const [isSignInForm, setIsSignInForm] = useState(true);
-	const [errorMessage, setErrorMessage] = useState(null);
+	const [errMessage, setErrMessage] = useState(null);
 	const email = useRef(null);
 	const password = useRef(null);
 	const name = useRef(null);
-
+	console.log(email.current.value, password.current.value);
 	const toggleSignInForm = () => {
 		setIsSignInForm(!isSignInForm);
 	};
 	const handleBtnClick = () => {
 		//Validate form data
-		const msg = checkValidatedData(
+		const message = checkValidatedData(
 			email.current.value,
 			password.current.value,
 			name.current.value
 		);
-		setErrorMessage(msg);
+		if (message) {
+			setErrMessage(message);
+			return;
+		}
 
-		//Signin / Signup
+		//create a new user account
+		//Signin / Signup logic`
+
+		if (!isSignInForm) {
+			//Sign Up logic
+			createUserWithEmailAndPassword(
+				auth,
+				email.current.value,
+				password.current.value
+			)
+				.then((userCredential) => {
+					const user = userCredential.user;
+					console.log(user);
+				})
+				.catch((error) => {
+					const errorCode = error.code;
+					const errorMessage = error.message;
+					setErrMessage(errorCode + "-" + errorMessage);
+				});
+		} else {
+			//Sign In logic
+			signInWithEmailAndPassword(
+				auth,
+				email.current.value,
+				password.current.value
+			)
+				.then((userCredential) => {
+					// Signed in
+					const user = userCredential.user;
+					console.log(user);
+				})
+				.catch((error) => {
+					const errorCode = error.code;
+					const errorMessage = error.message;
+					setErrMessage(errorCode + "-" + errorMessage);
+					console.log(errorCode, errorMessage);
+				});
+		}
 	};
 	return (
 		<div>
@@ -60,7 +105,7 @@ const Login = () => {
 					type="password"
 					placeholder="Password"
 				/>
-				<p className="text-sm text-[#e50914] py-2 font-bold">{errorMessage}</p>
+				<p className="text-sm text-[#e50914] py-2 font-bold">{errMessage}</p>
 				<button
 					className="p-2 my-2 bg-[#e50914] px-6 w-full rounded-md"
 					onClick={handleBtnClick}
