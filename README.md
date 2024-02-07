@@ -2,6 +2,9 @@
 
 - Create React App
 - configured tailwind css into our app
+- Header
+- Login form
+- Sign Up form
 
 # Features
 
@@ -27,6 +30,3 @@
 - Neflix Gpt
   - Search Bar
   - Movie Suggestions
-
-
-
