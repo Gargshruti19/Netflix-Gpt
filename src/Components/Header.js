@@ -1,8 +1,10 @@
 import { signOut } from "firebase/auth";
 import { auth } from "../Utils/firebase";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 const Header = () => {
 	const navigate = useNavigate();
+	const user = useSelector((store) => store.user);
 	const handleSignOut = () => {
 		signOut(auth)
 			.then(() => {
@@ -22,19 +24,17 @@ const Header = () => {
 "
 				alt="logo"
 			/>
-			<div className="flex p-2 space-x-2">
-				<img
-					className="w-12 h-12"
-					src="https://occ-0-6247-2164.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABdpkabKqQAxyWzo6QW_ZnPz1IZLqlmNfK-t4L1VIeV1DY00JhLo_LMVFp936keDxj-V5UELAVJrU--iUUY2MaDxQSSO-0qw.png?r=e6e"
-					alt="user-icon"
-				/>
-				<button
-					className="cursor-pointer px-4 py-2 bg-[#e50914] text-white border-0 rounded-md font-bold"
-					onClick={handleSignOut}
-				>
-					Sign Out
-				</button>
-			</div>
+			{user && (
+				<div className="flex p-2 space-x-2">
+					<img className="w-12 h-12" src={user?.photoURL} alt="user-icon" />
+					<button
+						className="cursor-pointer px-4 py-2 bg-[#e50914] text-white border-0 rounded-md font-bold"
+						onClick={handleSignOut}
+					>
+						Sign Out
+					</button>
+				</div>
+			)}
 		</div>
 	);
 };

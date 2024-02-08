@@ -13,12 +13,8 @@
 - create signup user account in firebase
 - Implement signin user API
 - created redux Store with userSlice
--
-
-
-
-
-
+- IMPLEMENTED SIGN OUT
+- UPDATE PROFILE
 # Features
 
 - # For loggedout User
