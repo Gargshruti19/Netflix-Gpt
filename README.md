@@ -15,6 +15,9 @@
 - created redux Store with userSlice
 - IMPLEMENTED SIGN OUT
 - UPDATE PROFILE
+- bugfix - sidnup user display name and profile picture update
+- bugfix - if user not logged in redirect /browse to login page and vice-versa
+
 # Features
 
 - # For loggedout User
