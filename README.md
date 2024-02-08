@@ -17,6 +17,9 @@
 - UPDATE PROFILE
 - bugfix - sidnup user display name and profile picture update
 - bugfix - if user not logged in redirect /browse to login page and vice-versa
+- unsubscribed to the onAuthStateChanged callback
+
+
 
 # Features
 
