@@ -18,8 +18,9 @@
 - bugfix - sidnup user display name and profile picture update
 - bugfix - if user not logged in redirect /browse to login page and vice-versa
 - unsubscribed to the onAuthStateChanged callback
-
-
+- add hard-coded values to the constant files(important)
+- register for tmdb api & create an app and get access token
+- get data from tmdb now playing movies list api
 
 # Features
 
