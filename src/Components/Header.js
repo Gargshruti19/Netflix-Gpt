@@ -32,7 +32,7 @@ const Header = () => {
 						photoURL: photoURL,
 					})
 				);
-				console.log(user);
+				// console.log(user);
 				navigate("/browse");
 			} else {
 				// User is signed out
