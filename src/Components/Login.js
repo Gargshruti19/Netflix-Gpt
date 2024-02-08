@@ -12,17 +12,17 @@ const Login = () => {
 	const [errMessage, setErrMessage] = useState(null);
 	const email = useRef(null);
 	const password = useRef(null);
-	const name = useRef(null);
-	console.log(email.current.value, password.current.value);
+	// const name = useRef(null);
+	// console.log(email.current?.value, password.current?.value);
 	const toggleSignInForm = () => {
 		setIsSignInForm(!isSignInForm);
 	};
 	const handleBtnClick = () => {
 		//Validate form data
 		const message = checkValidatedData(
-			email.current.value,
-			password.current.value,
-			name.current.value
+			email.current?.value,
+			password.current?.value,
+			// name.current?.value
 		);
 		if (message) {
 			setErrMessage(message);
@@ -36,8 +36,8 @@ const Login = () => {
 			//Sign Up logic
 			createUserWithEmailAndPassword(
 				auth,
-				email.current.value,
-				password.current.value
+				email.current?.value,
+				password.current?.value
 			)
 				.then((userCredential) => {
 					const user = userCredential.user;
@@ -52,8 +52,8 @@ const Login = () => {
 			//Sign In logic
 			signInWithEmailAndPassword(
 				auth,
-				email.current.value,
-				password.current.value
+				email.current?.value,
+				password.current?.value
 			)
 				.then((userCredential) => {
 					// Signed in
@@ -86,7 +86,7 @@ const Login = () => {
 				</h2>
 				{!isSignInForm && (
 					<input
-						ref={name}
+						// ref={name}
 						className="p-4 my-2 w-full bg-transparent rounded-md border-2 border-gray-700"
 						type="text"
 						placeholder="Full Name"
