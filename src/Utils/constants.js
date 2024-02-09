@@ -16,8 +16,7 @@ export const API_OPTIONS = {
 	},
 };
 
-export const MOVIES_API =
-	"https://api.themoviedb.org/3/movie/now_playing?page=1";
+export const MOVIES_API = "https://api.themoviedb.org/3/movie/";
 
 export const VIDEO_URL = "https://www.youtube.com/embed/";
 
