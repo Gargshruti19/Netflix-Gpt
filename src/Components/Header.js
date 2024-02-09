@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { useDispatch } from "react-redux";
 import { addUser, removeUser } from "../Utils/userSlice";
-import { LOGO_URL } from "../Utils/constants";
+import { LOGO_URL, SUPPORTED_LANGUAGES } from "../Utils/constants";
 import { toggleGptSearchView } from "../Utils/gptSlice";
 const Header = () => {
 	const dispatch = useDispatch();
@@ -48,13 +48,24 @@ const Header = () => {
 		//Unsubscribe when component unmounts
 		return () => unsubscribe();
 	}, []);
-	
+
 	return (
 		<div className="absolute px-10 py-2 bg-gradient-to-b from-black z-10 w-screen flex justify-between items-center">
 			<img className="w-48" src={LOGO_URL} alt="logo" />
 
 			{user && (
 				<div className="flex p-2">
+					<select className="bg-black text-white border-0 text-sm w-20 h-8 mt-2">
+						{SUPPORTED_LANGUAGES.map((lang) => (
+							<option
+								className="text-sm"
+								key={lang.identifier}
+								value={lang.identifier}
+							>
+								{lang.name}
+							</option>
+						))}
+					</select>
 					<button
 						className="py-2 px-6 mx-4 text-white bg-purple-800 border-0 rounded-md font-bold font-sans"
 						onClick={handleGptSearchClick}
