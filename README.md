@@ -31,6 +31,11 @@
 - make it autoplay, mute and on loop
 - added tailwind css to make it look awesome(main container)
 - build secondary container
+- build the movies list and movie card
+- found out tmdb image cdn url
+- made UI look better with tailwind
+- usePopularmovies custom hook
+
 
 # Features
 
