@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.hidden-scrollbar {
+	overflow-x: auto; /* Enable horizontal overflow scrolling */
+	overflow-y: auto; /* Enable vertical overflow scrolling */
+	-ms-overflow-style: none; /* Hide scrollbar for Internet Explorer */
+	scrollbar-width: none; /* Hide scrollbar for Firefox and Chrome */
+}

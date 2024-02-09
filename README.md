@@ -30,6 +30,7 @@
 - embedded youtube video
 - make it autoplay, mute and on loop
 - added tailwind css to make it look awesome(main container)
+- build secondary container
 
 # Features
 
