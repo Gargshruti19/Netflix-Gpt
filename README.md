@@ -37,11 +37,10 @@
 - usePopularMovies custom hook
 - useTopRatedMovies custom hook
 - useUpcomingMovies custom hook
-- GPT search feature
-
-
-
-
+- GPT search page
+- GPT search bar
+- multi-language feature in our App (BONUS)
+- integrate gpi apis(get openai key)
 
 # Features
 
