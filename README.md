@@ -34,8 +34,9 @@
 - build the movies list and movie card
 - found out tmdb image cdn url
 - made UI look better with tailwind
-- usePopularmovies custom hook
-
+- usePopularMovies custom hook
+- useTopRatedMovies custom hook
+- useUpcomingMovies custom hook
 
 # Features
 
