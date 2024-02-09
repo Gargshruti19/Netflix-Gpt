@@ -8,6 +8,7 @@ import { useDispatch } from "react-redux";
 import { addUser, removeUser } from "../Utils/userSlice";
 import { LOGO_URL, SUPPORTED_LANGUAGES } from "../Utils/constants";
 import { toggleGptSearchView } from "../Utils/gptSlice";
+import { changeLanguage } from "../Utils/configSlice";
 const Header = () => {
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
@@ -23,6 +24,9 @@ const Header = () => {
 	const handleGptSearchClick = () => {
 		//Toggle GPT Search
 		dispatch(toggleGptSearchView());
+	};
+	const handleLanguageChange = (e) => {
+		dispatch(changeLanguage(e.target.value));
 	};
 	useEffect(() => {
 		const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -55,7 +59,10 @@ const Header = () => {
 
 			{user && (
 				<div className="flex p-2">
-					<select className="bg-black text-white border-0 text-sm w-20 h-8 mt-2">
+					<select
+						className="bg-black text-white border-0 text-sm w-20 h-8 mt-2"
+						onChange={handleLanguageChange}
+					>
 						{SUPPORTED_LANGUAGES.map((lang) => (
 							<option
 								className="text-sm"

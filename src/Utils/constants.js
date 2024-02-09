@@ -32,7 +32,7 @@ export const SUPPORTED_LANGUAGES = [
 		name: "Hindi",
 	},
 	{
-		identifier: "spansih",
+		identifier: "spanish",
 		name: "Spanish",
 	},
 ];
