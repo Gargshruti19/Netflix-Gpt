@@ -37,4 +37,4 @@ export const SUPPORTED_LANGUAGES = [
 	},
 ];
 
-export const OPENAI_KEY = "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";
+export const OPENAI_KEY = "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";
