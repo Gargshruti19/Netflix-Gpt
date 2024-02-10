@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 
 const useMovieTrailer = (movieId) => {
 	const dispatch = useDispatch();
+
 	//fetch my trailer video and updating the store with trailer video data
 	const getMovieVideos = async () => {
 		const data = await fetch(
