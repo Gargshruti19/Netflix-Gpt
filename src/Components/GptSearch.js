@@ -8,7 +8,7 @@ const GptSearch = () => {
 			<div className="fixed -z-20 ">
 				<img className="h-screen object-cover w-screen" src={BG_URL} alt="background" />
 			</div>
-			<div className="">
+			<div className="flex flex-col gap-6">
 				<GptSearchBar />
 				<GptMovieSuggestion />
 			</div>

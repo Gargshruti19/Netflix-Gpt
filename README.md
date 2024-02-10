@@ -41,6 +41,14 @@
 - GPT search bar
 - multi-language feature in our App (BONUS)
 - integrate gpi apis(get openai key)
+- gpt search api call
+- fetched gpt movie suggestions from tmdb
+- gpt slice , added data
+- reused movie list component to make movie suggestions container
+- memoization
+- added .env file
+- added .env to .gitignore
+- made our site responsive
 
 # Features
 
@@ -61,7 +69,7 @@
     - Play Button
   - Movies List (Suggestions)
 
-    - vertical scroll in movies
+    - horizontal scroll in movies
 
 - Neflix Gpt
   - Search Bar
