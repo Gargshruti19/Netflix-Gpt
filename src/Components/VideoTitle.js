@@ -3,7 +3,7 @@ import { FiInfo } from "react-icons/fi";
 
 const VideoTitle = ({ title, overview }) => {
 	return (
-		<div className="w-screen aspect-video pt-[17%] px-20 absolute bg-gradient-to-r from-black ">
+		<div className="w-screen aspect-video pt-[23%] px-20 absolute bg-gradient-to-r from-black ">
 			<h1 className="text-6xl font-bold text-white">{title}</h1>
 			<p className="py-6 text-lg w-1/3 text-white">{overview}</p>
 			<div className="flex space-x-2">
