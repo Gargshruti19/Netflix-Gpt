@@ -3,7 +3,6 @@ import useNowPlayingMovies from "../hooks/useNowPlayingMovies";
 import usePopularMovies from "../hooks/usePopularMovies";
 import useTopRatedMovies from "../hooks/useTopRatedMovies";
 import useUpcomingMovies from "../hooks/useUpcomingMovies";
-import useShowMovieInfo from "../hooks/useShowMovieInfo";
 import GptSearch from "./GptSearch";
 import Header from "./Header";
 import MainContainer from "./MainContainer";
@@ -16,7 +15,6 @@ const Browse = () => {
 	usePopularMovies();
 	useTopRatedMovies();
 	useUpcomingMovies();
-	useShowMovieInfo();
 	return (
 		<div>
 			<Header />
