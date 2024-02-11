@@ -4,7 +4,9 @@ import { useRef } from "react";
 import openai from "../Utils/openai";
 import { API_OPTIONS } from "../Utils/constants";
 import { addGptMovieResult } from "../Utils/gptSlice";
+import { useNavigate } from "react-router-dom";
 const GptSearchBar = () => {
+	const navigate = useNavigate();
 	const dispatch = useDispatch();
 	const searchText = useRef(null);
 	const langKey = useSelector((store) => store.config.lang);
@@ -35,6 +37,7 @@ const GptSearchBar = () => {
 		});
 		if (!gptResults.choices) {
 			//write error
+			navigate("/error");
 		}
 		// console.log(gptResults.choices[0]?.message?.content.split(", ")); //split will give array
 		const gptMovies = gptResults?.choices[0]?.message?.content.split(", ");

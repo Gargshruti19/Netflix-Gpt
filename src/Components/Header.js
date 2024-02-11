@@ -9,6 +9,9 @@ import { addUser, removeUser } from "../Utils/userSlice";
 import { LOGO_URL, SUPPORTED_LANGUAGES } from "../Utils/constants";
 import { toggleGptSearchView } from "../Utils/gptSlice";
 import { changeLanguage } from "../Utils/configSlice";
+import { FaSearch } from "react-icons/fa";
+import { ImCross } from "react-icons/im";
+
 const Header = () => {
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
@@ -17,7 +20,7 @@ const Header = () => {
 	const handleSignOut = () => {
 		signOut(auth)
 			.then(() => {})
-			.catch((error) => {
+			.catch(() => {
 				// An error happened.
 				navigate("/error");
 			});
@@ -59,7 +62,7 @@ const Header = () => {
 			<img className="w-48" src={LOGO_URL} alt="logo" />
 
 			{user && (
-				<div className="flex p-2 justify-between">
+				<div className="flex p-2 justify-between items-center">
 					{showGptSearch && (
 						<select
 							className="bg-black text-white border-0 text-sm w-20 h-8 mt-2 rounded-sm p-1"
@@ -76,12 +79,21 @@ const Header = () => {
 							))}
 						</select>
 					)}
-					<button
-						className="px-4 sm:py-1 md:py-2 sm:px-4 md:px-6 mx-4 text-white bg-purple-800 border-0 rounded-md font-bold font-sans text-sm sm:text-lg md:text-xl"
-						onClick={handleGptSearchClick}
-					>
-						{showGptSearch ? "Home Page" : "GPT Search"}
-					</button>
+
+					{!showGptSearch && (
+						<>
+							<label className="text-gray-500 p-2 text-2xl">
+								<FaSearch />
+							</label>
+							<input
+								type="text"
+								className="w-44 h-8 p-2 text-white bg-transparent border-2 border-gray-500 rounded-md  font-sans text-sm sm:text-lg md:text-xl"
+								onClick={handleGptSearchClick}
+								placeholder="Search"
+							/>
+						</>
+					)}
+
 					<div className="flex flex-col items-center">
 						<img
 							className=" w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 lg:w-9 lg:h-9 xl:w-10 xl:h-10 2xl:w-12 2xl:h-12 pt-1"
@@ -93,6 +105,14 @@ const Header = () => {
 							Sign Out
 						</button>
 					</div>
+					{showGptSearch && (
+						<button
+							className="text-white p-2 text-2xl"
+							onClick={handleGptSearchClick}
+						>
+							<ImCross />
+						</button>
+					)}
 				</div>
 			)}
 		</div>
