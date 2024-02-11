@@ -1,4 +1,4 @@
-import MovieCard, { HoverMovieCard } from "./MovieCard";
+import MovieCard from "./MovieCard";
 
 const Movielist = ({ title, movies }) => {
 	if (movies === null) return; //early return
