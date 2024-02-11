@@ -36,7 +36,7 @@ const GptSearchBar = () => {
 		if (!gptResults.choices) {
 			//write error
 		}
-		console.log(gptResults.choices[0]?.message?.content.split(", ")); //split will give array
+		// console.log(gptResults.choices[0]?.message?.content.split(", ")); //split will give array
 		const gptMovies = gptResults?.choices[0]?.message?.content.split(", ");
 		//for each movie  I will search tmdb movie
 
@@ -51,9 +51,9 @@ const GptSearchBar = () => {
 	};
 
 	return (
-		<div className="pt-[40%] md:pt-[10%]">
+		<div className="pt-[40%] md:pt-[10%] sm:pt-[20%]">
 			<form
-				className="rounded-md  bg-black w-11/12 md:w-1/2 m-auto grid grid-cols-12 mx-auto"
+				className="rounded-md  bg-black w-11/12 sm:w-9/12 md:w-1/2 m-auto grid grid-cols-12 mx-auto"
 				onSubmit={(e) => {
 					e.preventDefault();
 				}}
@@ -61,7 +61,7 @@ const GptSearchBar = () => {
 				<input
 					ref={searchText}
 					type="text"
-					className="rounded-md p-2  md:p-4 m-4 col-span-9 border-0 placeholder:text-sm md:placeholder:text-xl"
+					className="rounded-md p-2  md:p-4 m-4 col-span-9 border-0 placeholder:text-sm sm:placeholder:text-[16px] md:placeholder:text-xl"
 					placeholder={language[langKey]?.gptSearchPlaceholder}
 				/>
 				<button
