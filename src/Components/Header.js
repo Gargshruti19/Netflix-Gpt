@@ -84,7 +84,7 @@ const Header = () => {
 					</button>
 					<div className="flex flex-col items-center">
 						<img
-							className=" w-6 h-6 sm:w-8 sm:h-8 md:w-12 md:h-12 pt-1"
+							className=" w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 lg:w-9 lg:h-9 xl:w-10 xl:h-10 2xl:w-12 2xl:h-12 pt-1"
 							src={user?.photoURL}
 							alt="user-icon"
 							onClick={handleSignOut}
