@@ -8,14 +8,12 @@ const Body = () => {
 		{
 			path: "/",
 			element: <Login />,
+			errorElement: <Error />,
 		},
 		{
 			path: "/browse",
 			element: <Browse />,
-		},
-		{
-			path: "/error",
-			element: <Error />,
+			errorElement: <Error />,
 		},
 	]);
 
