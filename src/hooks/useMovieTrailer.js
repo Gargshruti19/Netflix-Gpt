@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect } from "react";
 import { API_OPTIONS } from "../Utils/constants";
 import { addTrailerVideo } from "../Utils/moviesSlice";

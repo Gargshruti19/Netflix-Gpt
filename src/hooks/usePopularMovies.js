@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useDispatch, useSelector } from "react-redux";
 import { API_OPTIONS, MOVIES_API } from "../Utils/constants";
 import { addPopularMovies } from "../Utils/moviesSlice";
